@@ -34,12 +34,7 @@ Local spatial feature extraction via CNNs
 
 Global contextual modeling via Transformer attention
 
-By combining both representation paradigms, the model improves:
-
-✔ Boundary delineation
-✔ Detection of small or irregular lesions
-✔ Robustness across datasets
-✔ Accuracy–efficiency trade-off for practical deployment
+By combining convolutional and transformer-based representations, the model enhances multi-scale feature learning and improves segmentation performance for complex and heterogeneous tumor regions.
 
 # Architecture Overview
 <p align="center"> <img src="Hseg.jpg" width="95%"> </p>
