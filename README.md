@@ -1,27 +1,22 @@
 # HSegFormer+
 
-**A Hybrid CNN–Transformer Framework with Stage-wise Cross-Attention for Brain Tumor MRI Segmentation**
+> **A Hybrid CNN–Transformer model with Stage-wise Cross-Attention for Brain Tumor MRI Segmentation**
 
-This repository accompanies the manuscript **HSegFormer+**, which presents a hybrid CNN–Transformer framework for automatic brain tumor segmentation in magnetic resonance imaging (MRI).
+HSegFormer+ is a hybrid deep learning model for automatic brain tumor segmentation in magnetic resonance imaging (MRI). The proposed architecture integrates convolutional neural networks and vision transformers through a stage-wise cross-attention mechanism to jointly exploit local anatomical details and global contextual representations.
 
-The manuscript is currently under peer review. The source code, pretrained models, and training scripts will be made publicly available after the review process is completed.
-
----
-
-# Overview
-
-Brain tumor segmentation is an important step in computer-assisted diagnosis, treatment planning, radiotherapy planning, and disease monitoring. However, accurate segmentation remains challenging because of:
-
-- Large variations in tumor size and morphology
-- Ambiguous tumor boundaries
-- Heterogeneous tumor appearance
-- Class imbalance between tumor and background
-
-HSegFormer+ combines convolutional neural networks and vision transformers within a unified encoder–decoder framework to jointly capture local anatomical details and long-range contextual information.
+The associated manuscript is currently under peer review. The source code, pretrained models, and training scripts will be released after the review process is completed.
 
 ---
 
-# Architecture
+## Overview
+
+HSegFormer+ is a hybrid CNN–Transformer framework developed for brain tumor MRI segmentation. The proposed architecture integrates a SegFormer-B5 transformer encoder and a ResNet-50 CNN encoder through progressive stage-wise cross-attention, allowing complementary local and global feature representations to be learned across multiple encoding stages.
+
+The fused features are further refined using lightweight residual refinement blocks and progressively decoded through an attention-guided decoder with ASPP-based multi-scale contextual aggregation. The framework supports both binary and multi-class segmentation and has been evaluated on the BraTS 2021, Figshare, and BRISC 2025 datasets.
+
+---
+
+## Framework
 
 <p align="center">
 <img src="Proposed-Model.png" width="95%">
@@ -34,76 +29,63 @@ The proposed framework consists of the following components:
   - ResNet-50 CNN encoder
 
 - **Stage-wise Cross-Attention Fusion**
-  - Progressive feature interaction between CNN and Transformer representations at four encoding stages
+  - Progressive interaction between CNN and Transformer features at multiple encoding stages
 
 - **Feature Refinement Block (FRB)**
-  - Lightweight residual refinement of fused features
+  - Lightweight residual refinement of fused feature representations
 
 - **Attention-Guided Decoder**
-  - Multi-scale feature reconstruction using attention gates
+  - Progressive multi-scale feature reconstruction with attention gates
 
 - **ASPP Module**
-  - Multi-scale contextual aggregation before prediction
+  - Multi-scale contextual aggregation before the prediction layer
 
 - **Prediction Head**
-  - Supports both binary and multi-class segmentation
+  - Supports both binary and multi-class segmentation tasks
 
-For the BraTS 2021 dataset, the framework supports a **2.5D input representation**, while conventional **2D inputs** are used for the Figshare and BRISC 2025 datasets.
-
----
-
-# Experimental Evaluation
-
-HSegFormer+ has been evaluated on three publicly available brain MRI datasets:
-
-- **BraTS 2021**
-- **Figshare Brain Tumor Dataset**
-- **BRISC 2025**
-
-The manuscript reports comprehensive quantitative comparisons, ablation studies, qualitative visualizations, and stability analysis.
+For the BraTS 2021 dataset, the framework supports a **2.5D input representation**, while conventional **2D image inputs** are used for the Figshare and BRISC 2025 datasets.
 
 ---
 
-# Research Topics
+## Experimental Evaluation
 
-- Brain tumor MRI segmentation
-- Medical image analysis
-- Hybrid CNN–Transformer architectures
-- Cross-attention feature fusion
-- Multi-scale representation learning
-- Deep learning for medical imaging
+The proposed framework has been evaluated on three publicly available brain MRI datasets:
+
+- BraTS 2021
+- Figshare Brain Tumor Dataset
+- BRISC 2025
+
+The manuscript reports quantitative comparisons, ablation studies, qualitative visualizations, and stability analysis across these datasets.
 
 ---
 
-# Repository Status
+## Research Topics
 
-The repository currently contains:
+- Brain Tumor Segmentation
+- Medical Image Analysis
+- Deep Learning
+- Hybrid CNN–Transformer Networks
+- Cross-Attention
+- Medical Vision Transformers
+- Multi-scale Feature Learning
+
+---
+
+## Repository Status
+
+The repository currently provides:
 
 - Project overview
 - Network architecture
-- Manuscript information
+- Framework description
 
-The complete implementation, pretrained weights, and usage examples will be released in a future update.
+The complete implementation, pretrained weights, training scripts, and usage examples will be released in a future update.
 
 ---
 
-# Citation
+## License
 
-If you find this work useful, please cite:
-
-**HSegFormer+: A Hybrid CNN–Transformer Framework with Stage-wise Cross-Attention for Brain Tumor MRI Segmentation**
-
-**Authors**
-
-- Bahar Niknam
-- Amirreza Jalili
-- Hedieh Sajedi
-
-University of Tehran
-
-*Manuscript under peer review.*
-
-
+The license information will be added when the repository is publicly released.
 
 
 
