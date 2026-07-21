@@ -24,7 +24,7 @@ HSegFormer+ combines convolutional neural networks and vision transformers withi
 # Architecture
 
 <p align="center">
-<img src="Proposed_model.png" width="95%">
+<img src="Proposed-Model.png" width="95%">
 </p>
 
 The proposed framework consists of the following components:
